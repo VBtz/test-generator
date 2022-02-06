@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class QuestionRequest extends FormRequest {
+
+    public function authorize() {
+        return true;
+    }
+
+    public function rules() {
+        return [
+            'question' => 'required',
+            'jsonHidden' => 'required'
+        ];
+    }
+
+    public function messages() {
+        return [
+            'name.required' => 'Текст вопроса не может быть пустым'
+        ];
+    }
+}
